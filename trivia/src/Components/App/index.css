@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: rgb(65, 64, 64);
+  color: whitesmoke;
 }
 
 .App-logo {
@@ -39,3 +41,14 @@
 
 .true{  display: block}
 .false{ display: none}
+
+button{
+  font-size: large;
+}
+h1{
+  font-size: larger;
+}
+p{
+  font-size: large;
+
+}
