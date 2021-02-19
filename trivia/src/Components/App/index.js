@@ -24,7 +24,7 @@ import { useReducer, useState } from 'react';
 // App has 2 components - DisplayQuestions and WelcomePage
 
 let initialState = {
-  genre: 27,
+  genre: 21,
   difficulty: 'medium',
   playerName: 'Bob',
   score: 0,

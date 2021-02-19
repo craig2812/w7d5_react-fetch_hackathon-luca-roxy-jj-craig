@@ -21,8 +21,8 @@ function WelcomeDisplay({ state, dispatch, isVisible, handleVisibility }) {
                     ></input>
                     {/* <button type="submit" onClick={handleSubmit}></button> */}
                 </form>
-                {/* <h1>Difficulty: {state.difficulty}</h1> */}
-                {/* <h2>Genre Chosen: {state.genre}</h2> */}
+                <p>Difficulty: {state.difficulty}</p>
+                <p>Genre Chosen: {state.genre}</p>
              
                 <button onClick={() => dispatch({ type: 'DIFFICULTY', payload: 'easy' })}>Easy</button>
                 <button onClick={() => dispatch({ type: 'DIFFICULTY', payload: 'medium' })}>Medium</button>
