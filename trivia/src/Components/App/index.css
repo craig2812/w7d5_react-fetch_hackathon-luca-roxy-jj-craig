@@ -1,8 +1,9 @@
-.App {
+body{
   text-align: center;
   background-color: rgb(65, 64, 64);
   color: whitesmoke;
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -44,11 +45,17 @@
 
 button{
   font-size: large;
+  padding: 25px;
+  margin: 35px 5px
+
 }
 h1{
-  font-size: larger;
+  font-size: 100px;
 }
 p{
   font-size: large;
+}
 
+.clicked{
+  background-color: teal;
 }
