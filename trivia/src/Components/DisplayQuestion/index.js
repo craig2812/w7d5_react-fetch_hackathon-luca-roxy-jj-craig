@@ -49,7 +49,7 @@ function DisplayQuestion({ state, dispatch, isNotVisible, handleVisibility }) {
   }
   return (
     <div className={isNotVisible?'false':'true'}>
-      <p>{state.playerName}</p>
+    
       <p>{questions[qNumber].question}</p>
       <DisplayAnswers
         state={state}
