@@ -37,10 +37,10 @@ function DisplayQuestion({ state, dispatch, isNotVisible }) {
     return <p>Loading...</p>;
    }
 
-  else if(qNumber<10){
+  else if(qNumber<1){
   return (
     <div className={isNotVisible ? 'false' : 'true'}>
-
+<h1>TEST WHETHER UPDATE FORM WORKING</h1>
       <p className="questionText">{questions[qNumber].question.replace(/&#039;/g,"\'").replace(/&quot;/g,'\"').replace(/&eacute;/g, "\é")}</p>
       
       <DisplayAnswers
