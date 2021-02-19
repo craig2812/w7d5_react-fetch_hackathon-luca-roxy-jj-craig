@@ -16,7 +16,7 @@ function reducer(state, action) {
   }
 }
 
-function DisplayQuestion({ state, dispatch, isNotVisible, handleVisibility }) {
+function DisplayQuestion({ state, dispatch, isNotVisible }) {
   const [questions, questionsDispatch] = useReducer(reducer, null);
 
   //fetch api with useEffect, depending on visibility
@@ -27,7 +27,7 @@ function DisplayQuestion({ state, dispatch, isNotVisible, handleVisibility }) {
       );
       let data = await res.json();
       questionsDispatch({ type: 'GET_QUESTIONS', payload: data.results });
-    }
+      }
     getQuestions();
   }, []);
 
@@ -44,21 +44,24 @@ function DisplayQuestion({ state, dispatch, isNotVisible, handleVisibility }) {
   // when the "NEXT QUESTION" button is clicked
   const [qNumber, setQNumber] = useState(0);
 
+//change quote
+
+
   if (!questions) {
     return <p>Loading...</p>;
   }
   return (
-    <div className={isNotVisible?'false':'true'}>
-    
-      <p>{questions[qNumber].question}</p>
+    <div className={isNotVisible ? 'false' : 'true'}>
+
+      <p className="questionText">{questions[qNumber].question.replace(/&#039;/g,"\'").replace(/&quot;/g,'\"').replace(/&eacute;/g, "\é")}</p>
       <DisplayAnswers
         state={state}
         dispatch={dispatch}
         correctAnswer={questions[qNumber].correct_answer}
         incorrectAnswers={questions[qNumber].incorrect_answers}
-        nextQuestion={() => setQNumber(Math.min(9,qNumber+1))}
+        nextQuestion={() => setQNumber(Math.min(9, qNumber + 1))}
       />
-      <p>{`Score is ${state.score}`}</p>
+      <p>{`${state.playerName} Your Score is ${state.score}`}</p>
     </div>
   );
 }

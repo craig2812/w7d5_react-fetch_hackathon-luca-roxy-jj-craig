@@ -43,19 +43,61 @@ body{
 .true{  display: block}
 .false{ display: none}
 
+.quizButtons{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
 button{
   font-size: large;
   padding: 25px;
-  margin: 35px 5px
+  margin: 15px 5px
 
 }
 h1{
   font-size: 100px;
+  margin-top: 5px;
 }
 p{
   font-size: large;
 }
 
 .clicked{
-  background-color: teal;
+  background-color: rgb(142, 211, 115);
+}
+
+
+.Player_Name{
+  height: 40px;
+  width: 500px;
+}
+
+.genre_buttons{
+  background-color: cadetblue;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.genreButton{
+  background-color: coral;
+  
+}
+
+.username{
+  background-color: rgb(255, 255, 255);
+  color: cadetblue;
+}
+
+.diff_buttons{
+  background-color: rgb(236, 188, 180);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.answers{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.questionText{
+  font-size: x-large;
 }

@@ -7,6 +7,7 @@ function DisplayAnswers({
   incorrectAnswers,
   nextQuestion,
 }) {
+
   //generate random number 0-3
   let randomNum = Math.floor(Math.random() * 3);
   //insert it at this random index
@@ -16,6 +17,12 @@ function DisplayAnswers({
   //if index is random number
   //dispatch to up the score
   const [isCorrect, setIsCorrect] = useState('grey');
+  function handleAnswerChoice(){
+    setIsCorrect('grey')
+    nextQuestion();
+    
+
+  }
   function updateScore(i) {
     if (i === randomNum) {
       dispatch({ type: 'SCORE', payload: 10 });
@@ -25,10 +32,10 @@ function DisplayAnswers({
       setIsCorrect('red');
       console.log('no!');
     }
-    setTimeout(nextQuestion, 2000);
+    setTimeout(handleAnswerChoice, 2000);
   }
   return (
-    <div>
+    <div className="answers">
       {/* map buttons hand in handleclick*/}
       {answers.map((answer, index) => (
         <button

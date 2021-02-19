@@ -24,9 +24,9 @@ import { useReducer, useState } from 'react';
 // App has 2 components - DisplayQuestions and WelcomePage
 
 let initialState = {
-  genre: 21,
-  difficulty: 'medium',
-  playerName: 'Bob',
+  genre: "",
+  difficulty: "",
+  playerName: "",
   score: 0,
 };
 
@@ -60,10 +60,11 @@ function App() {
     setIsWelcomePage(!isWelcomePage);
   }
 
+
   return (
     <div className="App">
+      <p className="username">Current Player: {state.playerName}</p>
       <h1>Trivia Quiz</h1>
-      <h2>Player Name: {state.playerName}</h2>
       <DisplayQuestion
         state={state}
         dispatch={dispatch}
@@ -75,8 +76,7 @@ function App() {
         dispatch={dispatch}
         isVisible={isWelcomePage}
         handleVisibility={handleVisibility}
-      />
-      
+      />  
     </div>
   );
 }
