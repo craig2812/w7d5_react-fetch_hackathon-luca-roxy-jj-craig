@@ -6,6 +6,7 @@ function DisplayAnswers({
   correctAnswer,
   incorrectAnswers,
   nextQuestion,
+  qNumber
 }) {
 
   //generate random number 0-3
@@ -17,10 +18,10 @@ function DisplayAnswers({
   //if index is random number
   //dispatch to up the score
   const [isCorrect, setIsCorrect] = useState('grey');
-  function handleAnswerChoice(){
+  function handleAnswerChoice() {
     setIsCorrect('grey')
     nextQuestion();
-    
+
 
   }
   function updateScore(i) {
@@ -34,21 +35,22 @@ function DisplayAnswers({
     }
     setTimeout(handleAnswerChoice, 2000);
   }
-  return (
-    <div className="answers">
-      {/* map buttons hand in handleclick*/}
-      {answers.map((answer, index) => (
-        <button
-          className={isCorrect.toString()}
-          onClick={() => {
-            updateScore(index);
-          }}
-        >
-          {answer}
-        </button>
-      ))}
-    </div>
-  );
+
+    return (
+      <div className="answers">
+        {/* map buttons hand in handleclick*/}
+        {answers.map((answer, index) => (
+          <button
+            className={isCorrect.toString()}
+            onClick={() => {
+              updateScore(index);
+            }}
+          >
+            {answer}
+          </button>
+        ))}
+      </div>
+    );
 }
 
 export default DisplayAnswers;
